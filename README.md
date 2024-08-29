@@ -19,9 +19,12 @@ npm install
 ```
 
 ## Starting the projcet
-```npm run dev```
+```
+npm run dev
+```
 
 ## Building the project
 ```
 npm run build
-npm start```
+npm start
+```
