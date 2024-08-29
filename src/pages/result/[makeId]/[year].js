@@ -1,8 +1,8 @@
 
 export async function getStaticPaths() {
-    // Pre-render only a few pages for now. Adjust as necessary.
+  
     return {
-      paths: [], // Leave empty or add some default paths if desired.
+      paths: [], 
       fallback: 'blocking', // Serve 404 if no match is found during build time.
     };
   }
