@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Home() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [vehicleTypes, setVehicleTypes] = useState([]);
   const [selectedVehicleType, setSelectedVehicleType] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
@@ -11,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch vehicle types
-    fetch('https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json')
+    fetch(`${apiUrl}/vehicles/GetMakesForVehicleType/car?format=json`)
       .then(response => response.json())
       .then(data => setVehicleTypes(data.Results))
       .catch(error => console.error('Error fetching vehicle types:', error));

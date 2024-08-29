@@ -9,10 +9,11 @@ export async function getStaticPaths() {
   
   export async function getStaticProps({ params }) {
     const { makeId, year } = params;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     
     // Fetch vehicle models for the given makeId and year
     const response = await fetch(
-      `https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}?format=json`
+      `${apiUrl}/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}?format=json`
     );
     const data = await response.json();
     const makeName = data.Results[0]?.Make_Name || 'Unknown Make';
