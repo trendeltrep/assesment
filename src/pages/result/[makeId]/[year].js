@@ -28,15 +28,15 @@ export async function getStaticPaths() {
   export default function ResultPage({ models, makeName, year }) {
     return (
       <div className="min-h-screen p-6 bg-gray-100">
-        <h1 className="text-2xl font-bold mb-4">
-          Vehicle {makeName} models in Year {year}
+        <h1 className="text-indigo-500 text-2xl font-bold mb-4">
+          {makeName} models in Year {year}
         </h1>
         {models.length === 0 ? (
           <p className="text-red-500">No models found for this selection.</p>
         ) : (
-          <ul className="space-y-20 space-x-20">
+          <ul className="space-y-2">
             {models.map((model) => (
-              <li key={model.Model_ID} className="p-4 bg-white shadow rounded-md">
+              <li key={model.Model_ID} className="text-indigo-500 p-4 bg-white shadow rounded-md">
                 {model.Model_Name}
               </li>
             ))}
